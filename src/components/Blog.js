@@ -1,36 +1,44 @@
-import {AiFillEdit} from 'react-icons/ai';
-import {AiFillDelete} from 'react-icons/ai';
-import {AiOutlineSend} from 'react-icons/ai';
+import { useContext,useState,useEffect } from 'react';
+import axios from 'axios';
+import { ThemeContext } from '../contexts/ThemeContext';
+
+import SignleBlog from './SingleBlog';
+import NewBlogForm from './NewBlogForm';
 
 const Blog = () => {
 
+    // states 
+    const [blogs,setBlogs] = useState(null)
+
+
+    // efects 
+
+    useEffect(()=>{
+        getBlogs();
+    },[])
+
+    const {isLightTheme,light,dark,themeSwitcher} = useContext(ThemeContext);
+    const theme = isLightTheme ? light : dark;
+
 
     // functions 
-
-    const adjustTextAreaHeight = e =>{
-        e.target.style.height = '27px'
-        let scHeight = e.target.scrollHeight
-        e.target.style.height = `${scHeight}px`
+    const getBlogs = async () =>{
+        const res = await axios.get("http://localhost:3050/blogs")
+        setBlogs(res.data.blogs)
     }
 
 
+
     return ( 
-        <div className="blogs">
-            <div className="blog-container">
-                <div className="blog">
-                    <p>Menilek II, also spelled Menelik II, original name Sahle Mariam, also spelled Sahle Maryam or Sahle Miriam, (born August 17, 1844, Ankober, Shewa [Shoa], Ethiopia—died December 12, 1913, Addis Ababa), king of Shewa (or Shoa; 1865–89) and emperor of Ethiopia (1889–1913). One of Ethiopia’s greatest rulers, he expanded the empire almost to its present-day borders, repelled an Italian invasion in the Battle of Adwa in 1896, and carried out a wide-ranging program of modernization.Menilek II, also spelled Menelik II, original name Sahle Mariam, also spelled Sahle Maryam or Sahle Miriam, (born August 17, 1844, Ankober, Shewa [Shoa], Ethiopia—died December 12, 1913, Addis Ababa), king of Shewa (or Shoa; 1865–89) and emperor of Ethiopia (1889–1913). One of Ethiopia’s greatest rulers, he expanded the empire almost to its present-day borders, repelled an Italian invasion in the Battle of Adwa in 1896, and carried out a wide-ranging program of modernization.</p>
-                    <div className='btn-container'>
-                        <button><AiFillEdit /></button>
-                        <button><AiFillDelete /></button>
-                    </div>
-                </div>
+        <div className="blogs" style={{background: theme.bbg,transition: "1s"}}>
+            <div className="blog-container" >
+                {blogs && blogs.map(blog=>{
+                    return (
+                        <SignleBlog key={blog._id} blog={blog} blogs={blogs} setBlogs={setBlogs}/>
+                    )
+                })}
             </div>
-            <div className='form-container'>
-                <form>
-                    <textarea name="body" onKeyUp={adjustTextAreaHeight}></textarea>
-                    <button><AiOutlineSend /></button>
-                </form>
-            </div>
+            <NewBlogForm blogs={blogs} setBlogs={setBlogs} />
         </div>
      );
 }

@@ -1,11 +1,13 @@
 .blogs {
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
     display: grid;
     grid-template-rows: 1fr 50px;
     overflow: hidden;
 
     .blog-container {
+        width: 65%;
+        margin: 0 auto;
         padding: 7px;
         overflow: auto;
 
@@ -25,8 +27,10 @@
 
         .blog {
             margin: 5px;
+            margin-bottom: 12px;
             padding: 5px;
             position: relative;
+            border-radius: 5px;
 
             p {
                 padding: 7px;
