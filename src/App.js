@@ -6,6 +6,8 @@ import Blogs from './components/Blog';
 import About from './components/About';
 import NotFound from './components/NotFound';
 
+import './css/index.css';
+
 const App = () => {
     return ( 
         <div className="container">

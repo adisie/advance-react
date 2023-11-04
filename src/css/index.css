@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+}
+
+header {
+  width: 100%;
+  height: 100%;
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .site-logo {
+  text-decoration: none;
+}
+header .site-logo h3 {
+  font-family: cursive;
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+header .navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .navigation ul {
+  list-style: none;
+}
+header .navigation ul li {
+  display: inline-block;
+  margin-left: 12px;
+}
+header .navigation ul li .link {
+  text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+}
+header .navigation button {
+  border: none;
+  background: transparent;
+  margin-left: 12px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.home-content {
+  width: 100%;
+  height: 100%;
+}
+.home-content .content {
+  width: 65%;
+  margin: 24px auto;
+}
+.home-content .content h1, .home-content .content h3 {
+  width: 100%;
+  text-align: center;
+  margin: 9px;
+  font-family: "Times New Roman", Times, serif;
+}
+.home-content .content p {
+  width: 65%;
+  margin: 12px auto;
+  text-align: justify;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+.home-content .content .button-container {
+  margin: 24px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-content .content .button-container button {
+  margin: 12px;
+  padding: 5px 12px;
+  background: transparent;
+  border: 2px solid rgb(106, 106, 106);
+  font-family: "Times New Roman", Times, serif;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.home-content .content .button-container button span {
+  width: 0;
+  height: 100%;
+  border-radius: 5px;
+  background: rgb(106, 106, 106);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -3;
+  transition: 1s;
+}
+.home-content .content .button-container button:hover {
+  border: none;
+}
+.home-content .content .button-container button:hover span {
+  width: 100%;
+}
+
+.blogs {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 50px;
+  overflow: hidden;
+}
+.blogs .blog-container {
+  width: 75%;
+  margin: 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 7px 12px;
+}
+.blogs .blog-container::-webkit-scrollbar {
+  width: 3px;
+}
+.blogs .blog-container:hover::-webkit-scrollbar-track {
+  background: gray;
+  border-radius: 3px;
+}
+.blogs .blog-container:hover::-webkit-scrollbar-thumb {
+  background: rgb(66, 66, 66);
+  border-radius: 3px;
+}
+.blogs .blog-container .blog {
+  width: 75%;
+  margin: 18px auto;
+  position: relative;
+  border-radius: 7px;
+  padding-top: 18px;
+}
+.blogs .blog-container .blog p {
+  padding: 12px;
+  text-align: justify;
+  font-family: "Times New Roman", Times, serif;
+}
+.blogs .blog-container .blog .edit-delete-btn-container {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+.blogs .blog-container .blog .edit-delete-btn-container button {
+  background: transparent;
+  margin: 7px;
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+  opacity: 0;
+  transition: 1s;
+}
+.blogs .blog-container .blog:hover .edit-delete-btn-container button {
+  opacity: 0.65;
+}
+.blogs .new-blog-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.blogs .new-blog-form form {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.blogs .new-blog-form form textarea {
+  width: 350px;
+  height: 27px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid black;
+  padding: 3px 9px;
+  border-radius: 3px;
+  max-height: 450px;
+  background: transparent;
+  resize: none;
+}
+.blogs .new-blog-form form textarea::-webkit-scrollbar {
+  width: 0;
+}
+.blogs .new-blog-form form button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  margin-left: 7px;
+  cursor: pointer;
+}
+
+.about-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+.about-container .about-me {
+  width: 65%;
+  margin: 24px;
+  padding: 12px;
+  border-radius: 7px;
+}
+.about-container .about-me h1 {
+  margin: 12px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  text-align: center;
+}
+.about-container .about-me p {
+  margin: 12px;
+  font-family: "Times New Roman", Times, serif;
+}

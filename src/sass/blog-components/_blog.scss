@@ -1,0 +1,109 @@
+
+
+.blogs {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    overflow: hidden;
+
+    .blog-container {
+        width: 75%;
+        margin: 0 auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 7px 12px;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        &:hover::-webkit-scrollbar-track {
+            background: gray;
+            border-radius: 3px;
+        }
+        &:hover::-webkit-scrollbar-thumb {
+            background: rgb(66, 66, 66);
+            border-radius: 3px;
+        }
+
+        .blog {
+            width: 75%;
+            margin: 18px auto;
+            position: relative;
+            border-radius: 7px;
+            padding-top: 18px;
+
+            p {
+                padding: 12px;
+                text-align: justify;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            .edit-delete-btn-container {
+                position: absolute;
+                top: 3px;
+                right: 3px;
+
+                button {
+                    background: transparent;
+                    margin: 7px;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    border: none;
+                    opacity: 0;
+                    transition: 1s;
+                }
+            }
+
+            &:hover {
+                .edit-delete-btn-container {
+                    button {
+                        opacity: .65;
+                    }
+                }
+            }
+        }
+    }
+
+    .new-blog-form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        form {
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            textarea {
+                width: 350px;
+                height: 27px;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 1rem;
+                outline: none;
+                border: 1px solid black;
+                padding: 3px 9px;
+                border-radius: 3px;
+                max-height: 450px;
+                background: transparent;
+                resize: none;
+
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
+            }
+            button {
+                background: transparent;
+                border: none;
+                font-size: 1.5rem;
+                margin-left: 7px;
+                cursor: pointer;
+            }
+        }
+    }
+}
