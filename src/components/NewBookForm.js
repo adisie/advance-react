@@ -7,7 +7,7 @@ const NewBookForm = () => {
     const {isLightTheme,light,dark} = useContext(ThemeContext);
     const theme = isLightTheme ? light : dark;
 
-    const {addNewBook} = useContext(BookContext);
+    const {dispatch} = useContext(BookContext);
 
     // states
     const [title,setTitle] = useState('');
@@ -15,7 +15,7 @@ const NewBookForm = () => {
     // functions
     const submitHandler = e => {
         e.preventDefault();
-        addNewBook(title);
+        dispatch({type: 'ADD_BOOK',book: {title}});
         setTitle('');
     }
     return ( 

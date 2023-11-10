@@ -91,6 +91,11 @@ header nav button {
     border-radius: 7px;
 }
 
+.book-list ul li:hover {
+    cursor: pointer;
+    opacity: .75;
+}
+
 .form-container {
     width: 100%;
     height: 100%;
