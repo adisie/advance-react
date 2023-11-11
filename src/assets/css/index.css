@@ -49,7 +49,7 @@ header .user-controll-container {
 header .user-controll-container .theme-toggler {
   background: transparent;
   border: none;
-  font-size: 1rem;
+  font-size: 1.3rem;
   cursor: pointer;
 }
 header .user-controll-container .user-control {

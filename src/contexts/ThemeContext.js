@@ -11,7 +11,7 @@ const ThemeContextProvider = (props) => {
         dark: {hbg: 'rgb(11, 11, 11)',htc: 'rgb(170, 169, 169)',bbg: 'rgb(33, 33, 33)',btc: 'rgb(231, 231, 231)'},
     })
     return ( 
-        <ThemeContext.Provider value={{theme:theme,themeDispatcher: themeDispatcher}}>
+        <ThemeContext.Provider value={{theme,themeDispatcher}}>
             {props.children}
         </ThemeContext.Provider>
      );

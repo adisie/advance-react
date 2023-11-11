@@ -1,6 +1,10 @@
 
 import { NavLink } from "react-router-dom";
-import { useReducer } from "react";
+import { useContext } from "react";
+
+//icons
+import {IoIosMoon} from 'react-icons/io';
+import {BsFillSunFill} from 'react-icons/bs';
 
 // contexts
 import { ThemeContext } from "../contexts/ThemeContext";
@@ -8,38 +12,40 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import profile_img from '../assets/images/mili-3.jpg';
 
 const Header = () => {
-    const {theme} = useReducer(ThemeContext);
-    console.log(theme);
+    const {theme,themeDispatcher} = useContext(ThemeContext);
+    const themeColor = theme.isLightTheme ? theme.light : theme.dark;
     return ( 
-        <header>
-            <NavLink className="site-logo" to='/'>highland</NavLink>
+        <header style={{background: themeColor.hbg,color: themeColor.htc,transition: "1s"}}>
+            <NavLink className="site-logo" to='/' style={{color: themeColor.htc,transition: "1s"}}>highland</NavLink>
             <nav className="navigation">
                 <ul>
                     <li>
-                        <NavLink className="link" to="/">Home</NavLink>
+                        <NavLink className="link" to="/" style={{color: themeColor.htc,transition: "1s"}}>Home</NavLink>
                     </li>
                     <li>
-                        <NavLink className="link" to="about">About</NavLink>
+                        <NavLink className="link" to="about" style={{color: themeColor.htc,transition: "1s"}}>About</NavLink>
                     </li>
                     <li>
-                        <NavLink className="link" to="contact">Contact</NavLink>
+                        <NavLink className="link" to="contact" style={{color: themeColor.htc,transition: "1s"}}>Contact</NavLink>
                     </li>
                 </ul>
             </nav>
             <div className="user-controll-container">
-                <button className="theme-toggler">theme</button>
+                <button className="theme-toggler" style={{color: themeColor.htc}} onClick={()=>themeDispatcher({type: 'TOGGLE_THEME'})}>
+                    {theme.isLightTheme ? <IoIosMoon /> : <BsFillSunFill />}
+                </button>
                 {
                     true
                     ?
                     <div className="user-control">
-                        <button>logout</button>
-                        <span>username</span>
+                        <button style={{borderColor: themeColor.htc,color: themeColor.htc}}>logout</button>
+                        <span style={{color: themeColor.htc,transition: "1s"}}>username</span>
                         <img src={profile_img} alt="user-profile" className="user-profile" />
                     </div>
                     :
                     <div className="user-control">
-                        <NavLink to='login' className="user-controll-link">Login</NavLink>
-                        <NavLink to='signup' className="user-controll-link">Sign up</NavLink>
+                        <NavLink to='login' className="user-controll-link" style={{borderColor: themeColor.htc,color: themeColor.htc}}>Login</NavLink>
+                        <NavLink to='signup' className="user-controll-link" style={{borderColor: themeColor.htc,color: themeColor.htc}}>Sign up</NavLink>
                     </div>
                 }
             </div>
