@@ -1,0 +1,120 @@
+
+
+.blogs-main-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    overflow: hidden;
+
+    .blogs {
+        width: 65%;
+        margin: 0 auto;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        &:hover::-webkit-scrollbar-track {
+            background: rgb(173, 172, 172);
+            border-radius: 3px;
+        }
+
+        &:hover::-webkit-scrollbar-thumb {
+            background: rgb(110, 110, 110);
+            border-radius: 3px;
+        }
+
+        .single-blog {
+            margin: 5px;
+            padding: 3px;
+
+            .single-blog-container {
+                position: relative;
+                padding: 7px;
+
+                .delete-btn {
+                    background: transparent;
+                    border: none;
+                    font-size: 1.3rem;
+                    position: absolute;
+                    top: 7px;
+                    right: 7px;
+                    cursor: pointer;
+                    opacity: 0;
+                    transition: .85s;
+                }
+
+                &:hover {
+                    .delete-btn {
+                        opacity: .75;
+                    }
+                }
+
+                p {
+                    padding: 7px;
+                    margin-left: 12px;
+                    margin-bottom: 5px;
+                    border-radius: 7px;
+                }
+
+                .blog-author-container {
+                    width: max-content;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .author-img {
+                        width: 38px;
+                        height: 36px;
+                        border-radius: 50%;
+                    }
+                    span {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .form-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        form {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            textarea {
+                outline: none;
+                resize: none;
+                border: 2px solid black;
+                padding: 3px 12px;
+                border-radius: 5px;
+                font-family: 'Times New Roman', Times, serif;
+                height: 30px;
+                max-height: 400px;
+                
+
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
+            }
+
+            button {
+                background: transparent;
+                margin-left: 5px;
+                cursor: pointer;
+                font-size: 1.5rem;
+                border: none;
+            }
+        }
+    }
+}

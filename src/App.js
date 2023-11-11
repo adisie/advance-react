@@ -2,6 +2,11 @@ import { Routes,Route } from "react-router-dom";
 
 //context providers
 import ThemeContextProvider from "./contexts/ThemeContext";
+import AuthContextProvider from "./contexts/AuthContext";
+import BlogsContextProvider from "./contexts/BlogsContext";
+
+// private routes
+import PrivateRoutes from "./utils/PrivateRoutes";
 
 // components
 import Header from "./components/Header";
@@ -21,17 +26,23 @@ import './assets/css/index.css';
 const App = () => {
     return ( 
         <div className="container">
-            <ThemeContextProvider>
-                <Header />
-                <Routes>
-                    <Route index element={<Home />} />
-                    <Route path="blogs" element={<Blogs />} />
-                    <Route path="about" element={<About />} />
-                    <Route path="contact" element={<Contact />} />
-                    <Route path="login" element={<Login />} />
-                    <Route path="signup" element={<Signup />} />
-                </Routes>
-            </ThemeContextProvider>
+            <AuthContextProvider>
+                <ThemeContextProvider>
+                    <BlogsContextProvider>
+                        <Header />
+                        <Routes>
+                            <Route index element={<Home />} />
+                            <Route element={<PrivateRoutes />}>    
+                            <Route path="blogs" element={<Blogs />} />
+                            </Route>
+                            <Route path="about" element={<About />} />
+                            <Route path="contact" element={<Contact />} />
+                            <Route path="login" element={<Login />} />
+                            <Route path="signup" element={<Signup />} />
+                        </Routes>
+                    </BlogsContextProvider>
+                </ThemeContextProvider>
+            </AuthContextProvider>
         </div>
      );
 }

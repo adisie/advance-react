@@ -8,12 +8,14 @@ import {BsFillSunFill} from 'react-icons/bs';
 
 // contexts
 import { ThemeContext } from "../contexts/ThemeContext";
+import { AuthContext } from "../contexts/AuthContext";
 
 import profile_img from '../assets/images/mili-3.jpg';
 
 const Header = () => {
     const {theme,themeDispatcher} = useContext(ThemeContext);
     const themeColor = theme.isLightTheme ? theme.light : theme.dark;
+    const {auth,authDispatcher} = useContext(AuthContext);
     return ( 
         <header style={{background: themeColor.hbg,color: themeColor.htc,transition: "1s"}}>
             <NavLink className="site-logo" to='/' style={{color: themeColor.htc,transition: "1s"}}>highland</NavLink>
@@ -35,11 +37,12 @@ const Header = () => {
                     {theme.isLightTheme ? <IoIosMoon /> : <BsFillSunFill />}
                 </button>
                 {
-                    true
+                    auth.isLoggedIn
                     ?
                     <div className="user-control">
-                        <button style={{borderColor: themeColor.htc,color: themeColor.htc}}>logout</button>
-                        <span style={{color: themeColor.htc,transition: "1s"}}>username</span>
+                        <button style={{borderColor: themeColor.htc,color: themeColor.htc}}
+                        onClick={()=>authDispatcher({type: 'LOG_OUT'})}>logout</button>
+                        <span style={{color: themeColor.htc,transition: "1s"}}>{auth.username}</span>
                         <img src={profile_img} alt="user-profile" className="user-profile" />
                     </div>
                     :
