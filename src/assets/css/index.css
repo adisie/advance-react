@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+}
+
+header {
+  width: 100%;
+  height: 100%;
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .site-logo {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: bold;
+}
+header .navigation {
+  display: flex;
+  align-items: center;
+}
+header .navigation ul {
+  list-style: none;
+}
+header .navigation ul li {
+  display: inline-block;
+  margin-right: 9px;
+}
+header .navigation ul li .link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+header .navigation ul button {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.home-container {
+  width: 100%;
+  height: 100%;
+}
+.home-container .content-container {
+  width: 75%;
+  margin: 12px auto;
+}
+.home-container .content-container h1, .home-container .content-container h3 {
+  text-align: center;
+  margin: 7px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+.home-container .content-container p {
+  margin: 12px;
+  padding: 9px;
+  border-radius: 5px;
+  text-align: justify;
+}
+.home-container .content-container .btn-container {
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-container .content-container .btn-container .btn-link {
+  text-decoration: none;
+  padding: 3px 24px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.85rem;
+  margin: 3px 12px;
+  border-radius: 7px;
+  border: 2px solid black;
+}
+
+.auth-container {
+  width: 100%;
+  height: 100%;
+}
+.auth-container .form-container {
+  width: 75%;
+  margin: 24px auto;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+.auth-container .form-container form {
+  padding: 32px 64px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+}
+.auth-container .form-container form input {
+  margin-top: 9px;
+  outline: none;
+  font-family: "Times New Roman", Times, serif;
+  padding: 3px 12px;
+  border: 2px solid rgba(130, 130, 130, 0.735);
+  background: transparent;
+  border-radius: 5px;
+}
+.auth-container .form-container form input:focus {
+  border-color: black;
+}
+.auth-container .form-container form .error {
+  color: rgb(194, 3, 3);
+  font-size: small;
+  font-weight: bold;
+  margin-left: 7px;
+}
+.auth-container .form-container form button {
+  border: none;
+  font-size: 0.75rem;
+  padding: 7px 24px;
+  border-radius: 3px;
+  font-family: "Times New Roman", Times, serif;
+  cursor: pointer;
+  margin: 12px 0;
+}

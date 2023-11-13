@@ -1,0 +1,45 @@
+
+
+header {
+    width: 100%;
+    height: 100%;
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .site-logo {
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-family: cursive;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+
+        ul {
+            list-style: none;
+            li {
+                display: inline-block;
+                margin-right: 9px;
+
+                .link {
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            button {
+                border: none;
+                background: transparent;
+                font-size: 1.4rem;
+                cursor: pointer;
+
+            }
+        }
+    }
+}

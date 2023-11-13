@@ -1,0 +1,41 @@
+.home-container {
+    width: 100%;
+    height: 100%;
+
+    .content-container {
+        width: 75%;
+        margin: 12px auto;
+
+        h1,h3 {
+            text-align: center;
+            margin: 7px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+
+        p {
+            margin: 12px;
+            padding: 9px;
+            border-radius: 5px;
+            text-align: justify;
+        }
+
+        .btn-container {
+            width: 100%;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .btn-link {
+                text-decoration: none;
+                padding: 3px 24px;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: .85rem;
+                margin: 3px 12px;
+                border-radius: 7px;
+                border: 2px solid black;
+            }
+        }
+    }
+}

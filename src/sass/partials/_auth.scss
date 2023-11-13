@@ -1,0 +1,52 @@
+
+
+.auth-container {
+    width: 100%;
+    height: 100%;
+
+    .form-container {
+        width: 75%;
+        margin: 24px auto;
+        display: flex;
+        align-items: top;
+        justify-content: center;
+
+        form {
+            padding: 32px 64px;
+            border-radius: 7px;
+            display: flex;
+            flex-direction: column;
+
+            input {
+                margin-top: 9px;
+                outline: none;
+                font-family: 'Times New Roman', Times, serif;
+                padding: 3px 12px;
+                border: 2px solid rgba(130, 130, 130, 0.735);
+                background: transparent;
+                border-radius: 5px;
+
+                &:focus {
+                    border-color: black;
+                }
+            }
+
+            .error {
+                color: rgb(194, 3, 3);
+                font-size: small;
+                font-weight: bold;
+                margin-left: 7px;
+            }
+
+            button {
+                border: none;
+                font-size: .75rem;
+                padding: 7px 24px;
+                border-radius: 3px;
+                font-family: 'Times New Roman', Times, serif;
+                cursor: pointer;
+                margin: 12px 0;
+            }
+        }
+    }
+}
