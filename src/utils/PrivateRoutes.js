@@ -2,7 +2,7 @@
 import {Outlet,Navigate} from 'react-router-dom'
 
 const PrivateRoutes = () => {
-    const user = null
+    const user = true
     return ( 
         <>
             {

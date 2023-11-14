@@ -78,12 +78,11 @@ header .navigation ul button {
 }
 .home-container .content-container .btn-container .btn-link {
   text-decoration: none;
-  padding: 3px 24px;
+  padding: 7px 24px;
   font-family: "Times New Roman", Times, serif;
   font-size: 0.85rem;
   margin: 3px 12px;
   border-radius: 7px;
-  border: 2px solid black;
 }
 
 .auth-container {
@@ -111,9 +110,6 @@ header .navigation ul button {
   border: 2px solid rgba(130, 130, 130, 0.735);
   background: transparent;
   border-radius: 5px;
-}
-.auth-container .form-container form input:focus {
-  border-color: black;
 }
 .auth-container .form-container form .error {
   color: rgb(194, 3, 3);

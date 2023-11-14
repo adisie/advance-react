@@ -6,6 +6,7 @@ import PrivateRoutes from './utils/PrivateRoutes'
 
 // context provider
 import ThemeContextProvider from './contexts/ThemeContext'
+import AuthContextProvider from './contexts/AuthContext'
 
 // components
 import Header from './components/Header'
@@ -22,17 +23,19 @@ import './assets/css/index.css'
 const App = () => {
     return ( 
         <div className="container">
-            <ThemeContextProvider>
-                <Header />
-                <Routes>
-                    <Route index element={<Home />} />
-                    <Route element={<PrivateRoutes />}>
-                        <Route path='blogs' element={<Blogs />}/>
-                    </Route>
-                    <Route path='login' element={<Login />} />
-                    <Route path='signup' element={<Signup />} />
-                </Routes>
-            </ThemeContextProvider>
+            <AuthContextProvider>
+                <ThemeContextProvider>
+                    <Header />
+                    <Routes>
+                        <Route index element={<Home />} />
+                        <Route element={<PrivateRoutes />}>
+                            <Route path='blogs' element={<Blogs />}/>
+                        </Route>
+                        <Route path='login' element={<Login />} />
+                        <Route path='signup' element={<Signup />} />
+                    </Routes>
+                </ThemeContextProvider>
+            </AuthContextProvider>
         </div>
      );
 }
