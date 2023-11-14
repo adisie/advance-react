@@ -1,13 +1,20 @@
 
 
-import { createContext,useState } from "react"
+import { createContext,useState , useEffect} from "react"
 
 
 export const AuthContext = createContext()
 
 const AuthContextProvider = (props) => {
+    
     // states
     const [user,setUser] = useState(null)
+
+    // effect
+    useEffect(()=>{
+        const localData = JSON.parse(localStorage.getItem('user'))
+        setUser(localData)
+    },[])
 
     // functions
     //login user function

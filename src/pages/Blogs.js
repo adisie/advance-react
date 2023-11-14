@@ -1,26 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useContext} from "react"
+import { Navigate } from "react-router-dom"
 
+import { AuthContext } from "../contexts/AuthContext"
 
 const Blogs = () => {
 
-    //effects
-    useEffect(()=>{
-        authChecker()
-    },[])
+    // contexts 
+    const {user} = useContext(AuthContext)
 
-    //functions
-
-    // check auth
-    const authChecker = async () => {
-        const response = await fetch('/blogs/')
-        const data = await response.json()
-
-        console.log(data)
-    }
     return ( 
-        <div>
-            <h3>Blogs</h3>
-        </div>
+        <>
+        {
+            user
+             ? 
+             <h3>Blogs</h3>
+             : 
+             <Navigate to='/login' />
+        }
+        </>
      );
 }
  
